@@ -4,3 +4,4 @@ pyotp
 requests
 smartapi-python
 openpyxl
+logzero
