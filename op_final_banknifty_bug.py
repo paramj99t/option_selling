@@ -124,9 +124,9 @@ if "auto_refresh" not in st.session_state:
 
 # --- Static map for index tokens (NFO for options, NSE for spot index) ---
 INDEX_MAP = {
-    "NIFTY": {"token": "26000", "exchange": "NSE", "symbol": "NIFTY 50", "lot_size": 25, "step": 50},
-    "BANKNIFTY": {"token": "26009", "exchange": "NSE", "symbol": "NIFTY BANK", "lot_size": 15, "step": 100},
-    "FINNIFTY": {"token": "26037", "exchange": "NSE", "symbol": "NIFTY FIN SERVICE", "lot_size": 25, "step": 50},
+    "NIFTY": {"token": "26000", "exchange": "NSE", "symbol": "NIFTY 50", "lot_size": 65, "step": 50},
+    "BANKNIFTY": {"token": "26009", "exchange": "NSE", "symbol": "NIFTY BANK", "lot_size": 30, "step": 100},
+    "FINNIFTY": {"token": "26037", "exchange": "NSE", "symbol": "NIFTY FIN SERVICE", "lot_size": 60, "step": 50},
 }
 
 # --- Data Persistence Functions ---
@@ -1283,4 +1283,5 @@ if st.session_state.get("auto_refresh", False) and st.session_state.get("active_
         if active_group.get('status') == 'active':
             time.sleep(15)
             refresh_all_prices(st.session_state.active_group_id)
+
             st.rerun()
